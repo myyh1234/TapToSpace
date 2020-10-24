@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tap to Space</title>
+    <style>
+        #con{
+            display: flex;
+        }
+        form{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function f(){
+            var s = document.getElementById('source');
+            var text = s.value;
+            var l = text.length;
+            var res = ""
+            for (var i = 0; i < l; i++){
+                if (text[i] == '\t')
+                    res += "    ";
+                else
+                    res += text[i];
+            }
+            var put = document.getElementById('result');
+            console.log(res);
+            put.value = res;
+        }
+    </script>
+    <div id="con">
+        <form method="get">
+            <label for="source">소스 입력</label><br>
+            <textarea name="source" id="source" cols="70" rows="30"></textarea><br>
+            <input type="button" value="실행" onclick="f()">
+        </form>
+        <form method="get">
+            <label for="result">결과</label><br>
+            <textarea name="result" id="result" cols="70" rows="30">aaa</textarea><br>
+        </form>
+    </div>
+</body>
+</html>
